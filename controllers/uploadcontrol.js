@@ -68,7 +68,18 @@ const Delete = async(req,res)=>{
 //searching and filtering
 const GetByQuery = async(req,res)=>{
     try{
-        const getmoviesbyquery = await Uploads.find(req.query)
+        const {moviename , year} = req.query
+        const queryObject = {}
+
+        if(moviename){
+            queryObject.moviename = {$regex:moviename,$options:'i'}
+        }
+
+        if(year){
+            queryObject.year = year
+        }
+
+        const getmoviesbyquery = await Uploads.find(queryObject)
         res.json(getmoviesbyquery)
     }catch(err){
         console.log(err)
