@@ -65,4 +65,14 @@ const Delete = async(req,res)=>{
 
 }
 
-module.exports = {Create , Delete , GET , GetById}
+//searching and filtering
+const GetByQuery = async(req,res)=>{
+    try{
+        const getmoviesbyquery = await Uploads.find(req.query)
+        res.json(getmoviesbyquery)
+    }catch(err){
+        console.log(err)
+    }
+}
+
+module.exports = {Create , Delete , GET , GetById , GetByQuery}
