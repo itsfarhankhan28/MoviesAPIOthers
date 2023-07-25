@@ -13,7 +13,7 @@ router.get('/get',GET)
 
 router.get('/getbyid/:id',GetById)
 
-router.get('/getbyquery',GetByQuery)
+router.get('/',GetByQuery)
 
 router.delete('/delete/:id',Delete)
 
