@@ -68,7 +68,7 @@ const Delete = async(req,res)=>{
 //searching and filtering
 const GetByQuery = async(req,res)=>{
     try{
-        const {moviename , year , movietime , ratings , director , writer , stars} = req.query
+        const {moviename , year , movietime , ratings , director , writer , stars , genres} = req.query
         const queryObject = {}
 
         if(moviename){
@@ -97,6 +97,10 @@ const GetByQuery = async(req,res)=>{
 
         if(stars){
             queryObject.stars = {$regex:stars,$options:'i'}
+        }
+
+        if(genres){
+            queryObject.genres = {$regex:genres,$options:'i'}
         }
 
         const getmoviesbyquery = await Uploads.find(queryObject)
