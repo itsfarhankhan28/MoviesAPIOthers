@@ -11,10 +11,10 @@ router.post('/create',upload.fields([
 
 router.get('/get',GET)
 
-router.get('/getbyid/:id',GetById)
+router.get('/:id',GetById)
 
 router.get('/',GetByQuery)
 
-router.delete('/delete/:id',Delete)
+router.delete('/:id',Delete)
 
 module.exports = router
