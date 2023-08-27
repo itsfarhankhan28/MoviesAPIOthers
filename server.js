@@ -4,11 +4,8 @@ const app = express()
 const PORT = 4000
 const fileupload = require('./routes/route')
 const {cloudinaryConfig} = require('./config/cloudinaryconfig')
-const path = require('path')
 
-app.use(express.static(path.resolve(__dirname, 'src/public')));
 app.use(express.json())
-app.use(express.urlencoded({extended: true}));
 
 app.use('*',cloudinaryConfig)
 
