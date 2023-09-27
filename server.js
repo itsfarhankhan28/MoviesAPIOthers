@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 const PORT = 4000
-const fileupload = require('./routes/route')
+const fileupload = require('./api/route')
 const {cloudinaryConfig} = require('./config/cloudinaryconfig')
 
 app.use(express.json())
