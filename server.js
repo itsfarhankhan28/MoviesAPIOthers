@@ -7,7 +7,7 @@ const {cloudinaryConfig} = require('./config/cloudinaryconfig')
 const cors = require('cors')
 
 app.use(cors({
-    origin: 'https://cine-base.vercel.app/', // Replace with your Vercel app's domain
+    origin: 'https://cine-base.vercel.app', // Replace with your Vercel app's domain
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Specify the HTTP methods you want to allow
     credentials: true,
 }))
